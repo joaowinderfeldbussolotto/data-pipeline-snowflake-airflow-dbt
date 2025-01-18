@@ -166,3 +166,7 @@ The SQL Agent follows a structured workflow:
 6. Natural language response generation
 
 For detailed information about the SQL Agent, see [sql-agent/README.md](sql-agent/README.md)
+
+## Project Inspiration
+
+This project builds upon foundational concepts presented in the [Bootcamp Engenharia de Dados: Construa um Projeto Real](https://www.udemy.com/course/bootcamp-engenharia-de-dados/?srsltid=AfmBOoqGkEALI2x4t2oTlA4dnnQs-JtJWpbIVp1yMGcy1IC5Vy_dcJYH) by Fernando Amaral on Udemy. While the course provided the initial framework for the data pipeline architecture, this project extends those concepts by incorporating additional features, such as a Multi-LLM SQL Agent for natural language querying.
