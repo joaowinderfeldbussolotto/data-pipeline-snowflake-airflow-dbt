@@ -1,9 +1,16 @@
-# Automotive Sales Data Pipeline
+# Automotive Sales Data Pipeline & Natural Language SQL Agent
 
-A complete data pipeline solution for automotive sales analytics, featuring incremental data loading from PostgreSQL to Snowflake using Airflow, with DBT transformations for analytical insights.
+This project provides a comprehensive data pipeline solution for automotive sales analytics. It features incremental data loading from PostgreSQL to Snowflake using Apache Airflow, with DBT (Data Build Tool) transformations to generate analytical insights. Additionally, it includes an advanced multi-LLM (Large Language Model) SQL agent that allows for natural language querying of the data warehouse, making data access more intuitive and user-friendly.
+
+## SQL Agent Demo
+
+https://github.com/user-attachments/assets/98190828-7dfe-4ccf-8ad3-4d8c3ba28a0c
+
 
 ## Architecture Overview
 ![Architecture Diagram](assets/ELTAgentPipeline.drawio.png)
+
+
 
 The project consists of three main components:
 
