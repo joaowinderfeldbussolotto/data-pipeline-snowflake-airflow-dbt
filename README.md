@@ -3,7 +3,7 @@
 A complete data pipeline solution for automotive sales analytics, featuring incremental data loading from PostgreSQL to Snowflake using Airflow, with DBT transformations for analytical insights.
 
 ## Architecture Overview
-![Architecture Diagram](./assets/architecture.png)
+![Architecture Diagram](assets/ELTAgentPipeline.drawio.png)
 
 The project consists of three main components:
 
@@ -38,9 +38,23 @@ pipeline-snowflake-airflow-dbt/
 │   │   └── analysis/        # Analysis models
 │   ├── tests/               # Data quality tests
 │   └── README.md
+├── sql-agent/                  # Natural Language to SQL Agent
+│   ├── src/                    # Agent source code
+│   │   ├── agent.py           # Main agent logic
+│   │   ├── workflow_nodes.py  # LangGraph workflow implementation
+│   │   ├── prompts.py        # LLM prompts
+│   │   ├── database_manager.py # Database connection handling
+│   │   ├── llm_factory.py     # LLM initialization and management
+│   │   ├── utils.py          # Utility functions
+│   │   └── app.py            # Streamlit interface
+│   ├── .env                  # Environment variables
+│   ├── .gitignore           # Git ignore file
+│   └── README.md             # Agent documentation
 └── assets/                   # Documentation assets
     ├── dag_execution.png
-    └── data_lineage_dbt.png
+    ├── data_lineage_dbt.png
+    ├── sql_agent_demo.png    # SQL Agent interface demo
+    └── mermaid_diagram.png   # Workflow visualization
 ```
 
 ## Data Flow
@@ -66,6 +80,12 @@ pipeline-snowflake-airflow-dbt/
    - Temporal trends
    - Product insights
 
+5. **Natural Language SQL Agent**
+   - Multi-LLM architecture
+   - Automatic SQL generation
+   - Query validation and correction
+   - Human-readable answers
+
 ## Key Features
 
 - **Incremental Processing**
@@ -83,6 +103,12 @@ pipeline-snowflake-airflow-dbt/
   - Salesperson performance
   - Vehicle popularity
   - Temporal analysis
+
+- **Natural Language Queries**
+  - Conversational interface to data
+  - Multiple specialized LLMs
+  - Automatic SQL generation and validation
+  - User-friendly Streamlit interface
 
 ## Infrastructure
 
@@ -102,7 +128,34 @@ pipeline-snowflake-airflow-dbt/
 - DBT documentation for transformation lineage
 - Snowflake query history for performance
 
-## Contact
+## Analysis Tools
 
-For questions or support, please contact:
-[Your Contact Information]
+### SQL Agent
+The project includes a sophisticated SQL agent that allows business users to query the data warehouse using natural language:
+
+- **Multi-LLM Architecture**
+  - Query Generation (Mistral Codestral)
+  - Query Validation (Meta Llama 3.3)
+  - Answer Generation (Meta Llama 3.1)
+
+- **Intelligent Workflow**
+  - Schema-aware query generation
+  - Automatic query validation
+  - Error recovery and query refinement
+  - Natural language responses
+
+- **User Interface**
+  - Web-based Streamlit interface
+  - SQL query transparency
+  - Interactive results display
+  - Error handling and feedback
+
+The SQL Agent follows a structured workflow:
+1. Query initialization
+2. Schema loading and analysis
+3. SQL query generation
+4. Query validation and refinement
+5. Query execution
+6. Natural language response generation
+
+For detailed information about the SQL Agent, see [sql-agent/README.md](sql-agent/README.md)
